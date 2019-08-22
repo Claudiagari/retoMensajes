@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e1e1e1;">
+  <a class="navbar-brand" routerLink="/home">
+    <img src="../assets/images/logo.gif" width="140" height="50" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+      </li>
+    </ul>
+    <!--<div class="navbar-text" *ngIf="loggedIn">
+        <a class="nav-link" routerLink="/login"><i class="fas fa-home fa-2x"></i>
+          <span class="sr-only">(current)</span>
+        </a>
+    </div>-->
+    <div class="navbar-text" *ngIf="!loggedIn">
+       <img src="./assets/images/user.png"  height="50" alt="">
+       <span> nsnsns@gmail.com</span>
+       <a href=""> Cerrar</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row ct-coments">
+    <ul class="list-unstyled">
+      <li class="media">
+        <img src="./assets/images/user.png" class="mr-3 img-responsive "  height="50" alt="user">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">List-based media object</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+      </li>
+      <li class="media my-4">
+        <img src="./assets/images/user.png" class="mr-3 img-responsive "  height="50" alt="user">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">List-based media object</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+      </li>
+      <li class="media">
+        <img src="./assets/images/user.png" class="mr-3 img-responsive" alt="user"  height="50">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">List-based media object</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="row ct-submit">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Ingrese su comentario" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
