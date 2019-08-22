@@ -17,7 +17,6 @@ export class LoginService {
     ) {
         this.url = "https://ti.ucic.pe/";
      }
-
   login(username:string, password:string) {
    
     return this._http.post(this.url +'api/login', {
