@@ -11,9 +11,8 @@ const httpOptions = {
 };
 @Injectable()
 
-export class LoginService {
-  
-  
+export class RequestsService {
+   
   public url:string;
   public urlUser :string;
   public urlComents : string;

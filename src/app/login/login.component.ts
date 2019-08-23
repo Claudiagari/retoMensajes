@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import { LoginService } from '../services/login.service';
+import { RequestsService } from '../services/requests.service';
 
 
 @Component({
@@ -9,12 +9,12 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent  {
   
-  constructor(private loginService: LoginService,private router:Router){
+  constructor(private requestsService: RequestsService,private router:Router){
    }
   logIn(username: string, password: string, event: Event) {
     event.preventDefault(); 
   
-    this.loginService.login(username, password).subscribe(
+    this.requestsService.login(username, password).subscribe(
 
       result => {
         var token = Object.values(result)[1].token;

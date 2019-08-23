@@ -1,19 +1,19 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import {LoginService} from '../services/login.service'
+import {RequestsService} from '../services/requests.service'
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  providers : [LoginService]
+  providers : [RequestsService]
 })
 export class HomeComponent implements OnInit, DoCheck{
   public loggedIn = true;
   public user : any ={};
   public coments : any;
-  constructor( private _loginService : LoginService ){
+  constructor( private _requestsService : RequestsService ){
   }
   ngOnInit () {
-    this._loginService.userLogin().subscribe(
+    this._requestsService.userLogin().subscribe(
       result => {
         var data = Object.values(result)[1]
           this.user = data
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit, DoCheck{
         console.log(error)
       }
     )
-    this._loginService.getComnent().subscribe(
+    this._requestsService.getComnent().subscribe(
       result => {
         var data = Object.values(result)[1]
           this.coments = data
@@ -37,10 +37,10 @@ export class HomeComponent implements OnInit, DoCheck{
     console.log('doCheck ejecutado')
   }
   sendMessage(message:string, event: Event ){ 
-    this._loginService.sendComent(message).subscribe(
+    this._requestsService.sendComent(message).subscribe(
       result =>{
           console.log(result)
-          
+
       },
       error => {
           console.log(error)
