@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import {LoginService} from '../services/login.service'
 
 @Component({
@@ -6,7 +6,7 @@ import {LoginService} from '../services/login.service'
   templateUrl: './home.component.html',
   providers : [LoginService]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, DoCheck{
   public loggedIn = true;
   public user : any ={};
   public coments : any;
@@ -33,10 +33,14 @@ export class HomeComponent {
       }
     )
   }
+  ngDoCheck (){
+    console.log('doCheck ejecutado')
+  }
   sendMessage(message:string, event: Event ){ 
     this._loginService.sendComent(message).subscribe(
       result =>{
           console.log(result)
+          
       },
       error => {
           console.log(error)
