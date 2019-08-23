@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit, DoCheck{
     this._requestsService.sendComent(message).subscribe(
       result =>{
           console.log(result)
-
       },
       error => {
           console.log(error)
