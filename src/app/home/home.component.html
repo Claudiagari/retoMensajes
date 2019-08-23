@@ -13,14 +13,9 @@
       <li class="nav-item" routerLinkActive="active">
       </li>
     </ul>
-    <!--<div class="navbar-text" *ngIf="loggedIn">
-        <a class="nav-link" routerLink="/login"><i class="fas fa-home fa-2x"></i>
-          <span class="sr-only">(current)</span>
-        </a>
-    </div>-->
-    <div class="navbar-text" *ngIf="usserLogged">
-       <img src="./assets/images/user.png"  height="50" alt="">
-       <span> nsnsns@gmail.com</span>
+    <div class="navbar-text" *ngIf="loggedIn">
+       <img src={{user.image_url}} height="50" alt="">
+       <span> {{user.email}}</span>
        <a href=""> Cerrar</a>
     </div>
   </div>
@@ -28,34 +23,20 @@
 <div class="container">
   <div class="row ct-coments">
     <ul class="list-unstyled">
-      <li class="media">
-        <img src="./assets/images/user.png" class="mr-3 img-responsive "  height="50" alt="user">
+      <li class="media" *ngFor="let coment of coments">
+        <img src="{{coment.info_user.image_url}}" class="mr-3 img-responsive  " width="50"   height="50" alt="user">
         <div class="media-body">
-          <h5 class="mt-0 mb-1">List-based media object</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          <h5 class="mt-0 mb-1">{{coment.info_user.name + ' ' + coment.info_user.lastname }}</h5>
+          {{coment.body}}
         </div>
       </li>
-      <li class="media my-4">
-        <img src="./assets/images/user.png" class="mr-3 img-responsive "  height="50" alt="user">
-        <div class="media-body">
-          <h5 class="mt-0 mb-1">List-based media object</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-      </li>
-      <li class="media">
-        <img src="./assets/images/user.png" class="mr-3 img-responsive" alt="user"  height="50">
-        <div class="media-body">
-          <h5 class="mt-0 mb-1">List-based media object</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-      </li>
-    </ul>
+     </ul>
   </div>
   <div class="row ct-submit">
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Ingrese su comentario" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <input type="text" class="form-control" placeholder="Ingrese su comentario" aria-label="Recipient's username" aria-describedby="button-addon2" #message name="message">
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2"  (click)="sendMessage(message.value, $event)">Enviar</button>
       </div>
     </div>
   </div>
