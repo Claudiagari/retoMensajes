@@ -5,12 +5,12 @@
       <h1>Login</h1>
       <form>
         <div class="form-group">
-            <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Usuario">
+            <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Usuario" #username name="username">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control"  placeholder="Contraseña">
+          <input type="password" class="form-control"  placeholder="Contraseña" #password name="password">
         </div>
-        <button type="submit" class="btn btn-primary" >Ingresar</button>
+        <button type="submit" class="btn btn-primary" (click)="logIn(username.value, password.value, $event)" id="login-button" >Ingresar</button>
       </form>
     </div>
   </div>

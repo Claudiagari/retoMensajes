@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/retoMensajes",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
